@@ -27,14 +27,11 @@ body {
   color: var(--color-text-app);
   font-family: var(--font-ui);
   margin: 0;
-  display: flex;
-  justify-content: center;
   min-height: 100vh;
 }
 
 #root {
   width: 100%;
-  max-width: 480px;
   background-color: #0f172a;
   background-image: 
     radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 

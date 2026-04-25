@@ -22,7 +22,7 @@ export function Home() {
       {/* Filters Sticky Container */}
       <div className="sticky top-[73px] z-30 mb-6 flex flex-col gap-3 pt-2 pb-4 shadow-lg border-b border-white/5" style={{ background: 'radial-gradient(at 50% 0%, hsla(225,39%,20%,0.9) 0, #0f172a 100%)', backdropFilter: 'blur(12px)' }}>
         {/* Categories Strip */}
-        <div className="flex gap-3 px-5 overflow-x-auto hide-scrollbar">
+        <div className="flex gap-3 px-5 overflow-x-auto hide-scrollbar max-w-7xl mx-auto w-full">
           {categories.map((cat) => (
             <button
               key={cat}
@@ -43,7 +43,7 @@ export function Home() {
         </div>
         
         {/* Formats Strip */}
-        <div className="flex gap-3 px-5 overflow-x-auto hide-scrollbar">
+        <div className="flex gap-3 px-5 overflow-x-auto hide-scrollbar max-w-7xl mx-auto w-full">
           {formats.map((fmt) => (
             <button
               key={fmt}
@@ -70,18 +70,18 @@ export function Home() {
         </h2>
       </div>
 
-      <div className="px-5 flex flex-col gap-4">
+      <div className="px-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
         {filteredArticles.length > 0 ? (
           filteredArticles.map(article => (
-            <Link key={article.id} to={`/article/${article.id}`} className="glass rounded-3xl p-4 flex gap-4 hover:bg-white/10 transition-colors items-center">
-              <div className="w-[72px] h-[72px] rounded-2xl shrink-0 flex items-center justify-center text-3xl bg-white/5">
+            <Link key={article.id} to={`/article/${article.id}`} className="glass rounded-3xl p-5 flex gap-4 hover:bg-white/10 transition-colors items-center h-full group">
+              <div className="w-[80px] h-[80px] rounded-2xl shrink-0 flex items-center justify-center text-3xl bg-white/5 group-hover:scale-105 transition-transform">
                 {article.emoji}
               </div>
               <div className="flex-1 min-w-0">
                 <div className={cn("text-[10px] font-bold tracking-widest uppercase mb-1.5", categoryColors[article.category].text)}>
                   {article.category}
                 </div>
-                <h3 className="font-display text-[15px] font-bold leading-[1.35] mb-2 text-white">
+                <h3 className="font-display text-[16px] font-bold leading-[1.35] mb-2 text-white group-hover:text-cyan-400 transition-colors">
                   {article.title}
                 </h3>
                 <div className="flex justify-between items-center mt-auto">
@@ -94,7 +94,7 @@ export function Home() {
             </Link>
           ))
         ) : (
-          <div className="glass rounded-3xl p-10 flex flex-col items-center justify-center text-center mt-4">
+          <div className="col-span-full glass rounded-3xl p-10 flex flex-col items-center justify-center text-center mt-4">
             <div className="text-4xl mb-4">🧐</div>
             <p className="font-display text-lg font-bold text-white mb-2">Aucun résultat</p>
             <p className="text-sm text-slate-400">Essayez de modifier vos filtres pour voir plus d'articles.</p>

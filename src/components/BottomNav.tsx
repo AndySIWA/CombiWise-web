@@ -13,7 +13,7 @@ export function BottomNav() {
   ];
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 max-w-[480px] mx-auto z-50 p-4">
+    <div className="fixed bottom-0 left-0 right-0 z-50 p-4 lg:hidden">
       <div className="glass rounded-3xl h-[72px] flex items-center justify-around">
         {navItems.map((item) => {
           const isActive = location.pathname === item.path || (item.path !== '/' && location.pathname.startsWith(item.path));

@@ -7,9 +7,9 @@ export function Layout() {
   const hideNav = location.pathname.startsWith('/slides');
 
   return (
-    <div className="min-h-screen pb-[72px]">
+    <div className="min-h-screen pb-[72px] lg:pb-0">
       {!hideNav && <Header />}
-      <main>
+      <main className="max-w-7xl mx-auto">
         <Outlet />
       </main>
       {!hideNav && <BottomNav />}
